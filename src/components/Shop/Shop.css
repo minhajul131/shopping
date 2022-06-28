@@ -1,0 +1,9 @@
+.shop-container{
+    display: flex;
+}
+.product-container{
+    margin: 20px;
+    border-right: 1px solid gainsboro;
+    padding: 5px;
+    width: 70%;
+}

@@ -1,18 +1,26 @@
-import React from 'react';
-import logo from '../../images/logo.png';
-import './Header.css';
+import React, { useContext } from "react";
+import { UserContext } from "../../App";
+import logo from "../../images/logo.png";
+import "./Header.css";
 
-const header = () => {
-    return (
-        <div className="header">
-            <img src={logo} alt="" />
-            <nav>
-                <a href="/shop">Shop</a>
-                <a href="/review">Review</a>
-                <a href="/inventory">Invertory</a>
-                </nav>
-        </div>
-    );
+const Header = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  return (
+    
+    <div className="header">
+      <a href="/">
+        <img src={logo} alt="" />
+      </a>
+
+      <nav>
+        <a href="/shop">Shop</a>
+        <a href="/review">Review</a>
+        <a href="/inventory">Inventory</a>
+        <button onClick={() => setLoggedInUser({})}>Sign Out</button>
+      </nav>
+      
+    </div>
+  );
 };
 
-export default header;
+export default Header;

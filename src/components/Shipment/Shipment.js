@@ -15,7 +15,7 @@ const Shipment = () => {
     const orderDetails = {...loggedInUser, products: savedCart, Shipment: data, orderTime: new Date()};
     console.log(orderDetails.Shipment)
     
-    fetch('http://localhost:3200/addOrder', {
+    fetch('https://intense-fortress-38130.herokuapp.com/addOrder', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

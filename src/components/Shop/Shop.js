@@ -16,7 +16,7 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3200/products')
+    fetch('https://intense-fortress-38130.herokuapp.com/products')
     .then(res => res.json())
     .then(data => setProduct(data))
   },[])
@@ -24,7 +24,7 @@ const Shop = () => {
   useEffect(() => {
     const savedCart = getDatabaseCart();
     const productKeys = Object.keys(savedCart);
-    fetch('http://localhost:3200/productByKeys',{
+    fetch('https://intense-fortress-38130.herokuapp.com/productByKeys',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -20,7 +20,7 @@ function App() {
       <h4>email: {loggedInUser.email}</h4>
       
       <Header></Header>
-      <BrowserRouter>
+      
       
         <Routes>
         
@@ -33,7 +33,7 @@ function App() {
           <Route path="/product/:productKey" element={<ProductDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      
     </UserContext.Provider>
   );
 }

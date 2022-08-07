@@ -23,16 +23,26 @@ const Shop = () => {
 
   useEffect(() => {
     const savedCart = getDatabaseCart();
-    const productKeys = Object.keys(savedCart);
-    fetch('https://intense-fortress-38130.herokuapp.com/productByKeys',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(productKeys)
-    })
-    .then(res => res.json())
-    .then(data => setCart(data))
+    const savedCart2 = [];
+    for(const key in savedCart) {
+      const add = products.find(product => product.key === key);
+      if(add) {
+        const quantity = savedCart[key];
+        add.quantity = quantity;
+        savedCart2.push(add)
+      }
+    }
+    setCart(savedCart2);
+    // const productKeys = Object.keys(savedCart);
+    // fetch('https://intense-fortress-38130.herokuapp.com/productByKeys',{
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(productKeys)
+    // })
+    // .then(res => res.json())
+    // .then(data => setCart(data))
   }, [products]);
 
   const handelProduct = (product) => {

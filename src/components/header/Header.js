@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import logo from "../../images/logo.png";
 import "./Header.css";
@@ -13,9 +14,9 @@ const Header = () => {
       </a>
 
       <nav>
-        <a href="/shop">Shop</a>
-        <a href="/review">Review</a>
-        <a href="/inventory">Inventory</a>
+        <Link to="/shop">Shop</Link>
+        <Link to="/review">Review</Link>
+        <Link to="/inventory">Inventory</Link>
         <button onClick={() => setLoggedInUser({})}>Sign Out</button>
       </nav>
       

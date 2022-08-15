@@ -9,9 +9,13 @@ import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import imgs from "../../images/giphy.gif";
 import { useNavigate } from "react-router-dom";
+import useCart from "../../hooks/useCart";
+import useProducts from "../../hooks/useProducts";
 
 const Review = () => {
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
+  const [products, setProducts] =useProducts();
+  const [cart, setCart] = useCart(products)
   const [orderPlaced, setOrderPlaced] = useState(false);
   const history = useNavigate() //usehistory
 

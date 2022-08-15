@@ -50,9 +50,9 @@ const {cart} = props;
     // </div>
     <div>
       <h4>Order Summary</h4>
-      <p>Selected Items: {quantity}</p>
-      <p>Total price: ${total}</p>
-      <p>Total shipping: ${shipping}</p>
+      <p>Selected Items: {cart.length}</p>
+      <p>Total price: {total}</p>
+      <p>Total shipping: {shipping}</p>
       <p>Tax: {tax}</p>
       <h5>Grand Total: {grandTotal.toFixed(2)}</h5>
       {props.children}
